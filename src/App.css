@@ -1,3 +1,11 @@
 .App {
   padding-top: 20px;
 }
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+

@@ -35,7 +35,7 @@ const EstimatorPage = (props) => {
 
   return (
     <section className="banner row">
-      <div className="col-md-4 perfect-center">
+      <div className="col-md-4 estimate-container perfect-center">
         <div className="auth-container">
           <div>
             <h4 className="font-bold">covid-19 Estimator</h4>
@@ -131,7 +131,7 @@ const EstimatorPage = (props) => {
             </div>
 
             <div className="auth-button-container">
-              <button className="btn data-go-estimate auth-button bold-600">
+              <button data-go-estimate className="btn  auth-button bold-600">
                 Estimate
               </button>
             </div>
