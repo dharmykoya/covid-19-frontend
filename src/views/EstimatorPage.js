@@ -1,17 +1,15 @@
-import React, { useState, useCallback } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
 
 import "./Estimator.css";
 import Input from "../components/input/Input";
-import Button from "../components/button/Button";
 import covid19ImpactEstimator from "../estimator";
 import EstimateResults from "../components/estimateResult/EstimateResults";
 
 const EstimatorPage = (props) => {
-  const [population, setPopulation] = useState(554445);
-  const [timeToElapse, setTimeToElapse] = useState(55);
-  const [reportedCases, setReportedCases] = useState(555);
-  const [totalHospitalBeds, setTotalHospitalBeds] = useState(555);
+  const [population, setPopulation] = useState();
+  const [timeToElapse, setTimeToElapse] = useState();
+  const [reportedCases, setReportedCases] = useState();
+  const [totalHospitalBeds, setTotalHospitalBeds] = useState();
   const [periodType, setPeriodType] = useState("days");
   const [estimatorResults, setEstimatorResults] = useState();
 
@@ -31,11 +29,7 @@ const EstimatorPage = (props) => {
       totalHospitalBeds: parseInt(totalHospitalBeds),
     };
 
-    console.log(777, data);
-
     const res = covid19ImpactEstimator(data);
-
-    console.log(res);
     await setEstimatorResults(res);
   };
 
@@ -46,7 +40,7 @@ const EstimatorPage = (props) => {
           <div>
             <h4 className="font-bold">covid-19 Estimator</h4>
             <div>
-              <p className="text-muted small-info-text">
+              <p className="text-green small-info-text">
                 All Input are compulsory
               </p>
             </div>
@@ -137,7 +131,9 @@ const EstimatorPage = (props) => {
             </div>
 
             <div className="auth-button-container">
-              <button className="btn auth-button bold-600">Estimate</button>
+              <button className="btn data-go-estimate auth-button bold-600">
+                Estimate
+              </button>
             </div>
           </form>
         </div>
@@ -147,7 +143,7 @@ const EstimatorPage = (props) => {
           <div>
             <h4 className="font-bold">covid-19 Estimator Results</h4>
             <div>
-              <p className="text-muted small-info-text">
+              <p className="text-green small-info-text">
                 These are the best estimated results
               </p>
             </div>

@@ -1,21 +1,10 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 
 const EstimateResults = (props) => {
-  console.log(66, props);
-
-  //   const {}
-  // currentlyInfected: 0
-  // infectionsByRequestedTime: 0
-  // severeCasesByRequestedTime: 0
-  // hospitalBedsByRequestedTime: 0
-  // casesForICUByRequestedTime: 0
-  // casesForVentilatorsByRequestedTime: 0
-  // dollarsInFlight: NaN
 
   let result = <p>Hold on while your result are being calculated.</p>;
   if (props.result) {
-    const { data, impact, severeImpact } = props.result;
+    const { impact, severeImpact } = props.result;
     result = (
       <Fragment>
         <div>
